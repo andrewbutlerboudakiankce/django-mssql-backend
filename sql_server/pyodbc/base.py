@@ -88,11 +88,14 @@ class DatabaseWrapper(BaseDatabaseWrapper):
         'NullBooleanField': 'bit',
         'OneToOneField': 'int',
         'PositiveIntegerField': 'int',
+        'PositiveTinyIntegerField': 'tinyint',
         'PositiveSmallIntegerField': 'smallint',
         'PositiveBigIntegerField': 'bigint',
         'SlugField': 'nvarchar(%(max_length)s)',
         'SmallAutoField': 'smallint IDENTITY (1, 1)',
         'SmallIntegerField': 'smallint',
+        'TinyAutoField': 'tinyint IDENTITY (1, 1)',
+        'TinyIntegerField': 'tinyint',
         'TextField': 'nvarchar(max)',
         'TimeField': 'time',
         'UUIDField': 'char(32)',
@@ -100,6 +103,7 @@ class DatabaseWrapper(BaseDatabaseWrapper):
     }
     data_type_check_constraints = {
         'PositiveIntegerField': '[%(column)s] >= 0',
+        'PositiveTinyIntegerField': '[%(column)s] >= 0',
         'PositiveSmallIntegerField': '[%(column)s] >= 0',
     }
     operators = {
